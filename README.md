@@ -1,5 +1,7 @@
 # Record player
 
+*Follow my log book [here](https://github.com/RobbertWolfs/100-days-of-code/blob/master/log.md).*
+
 ## Goal
 
 I'm making this project for the [#100daysofcode](https://medium.freecodecamp.com/start-2017-with-the-100daysofcode-improved-and-updated-18ce604b237b#.8qamlpr3r) challenge. 
