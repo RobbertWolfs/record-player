@@ -1,5 +1,8 @@
-<template>
-    <div class="message">{{ message }}</div>
+<template lang="pug">
+    div
+        .message 
+            | {{ message }}&nbsp; 
+            span.test #
 </template>
 
 <script>
@@ -10,11 +13,15 @@
             }
         }
     }
+
 </script>
 
-<style>
+<style lang="scss">
     .message {
         color: hotpink;
         text-align: center;
-    }
+         .test {
+            color: green;
+        }
+    }   
 </style>

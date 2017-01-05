@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/git,images,macos,node,osx,root,sass,visualstudiocode
 
 ./node_modules
-dist
+target
 
 ### Git ###
 *.orig
