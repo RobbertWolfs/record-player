@@ -2,14 +2,24 @@
     div
         .message 
             | {{ message }}&nbsp; 
-            span.test #
+            span.test #100daysofcode
+        
+        .counter
+            span {{ count }}
+            button(@click.prevent="increment") click
 </template>
 
 <script>
     export default {
-        data() {
+        data () {
             return {
-                message: 'Hello VueJS',
+                message: 'Hello VueJs',
+            count: 0
+            }
+        },
+        methods: {
+            increment () {
+            this.count ++;
             }
         }
     }
@@ -21,7 +31,24 @@
         color: hotpink;
         text-align: center;
          .test {
-            color: green;
+            color: blue;
         }
     }   
+
+    .counter {
+        margin: 10px;
+        color: teal;
+        text-align: center;
+
+        button {
+            display: block;
+            width: 100px;
+            margin: 5px auto;
+            background-color: teal;
+            border: none;
+            color: white;
+            padding: 5px;
+        }
+    }
+
 </style>

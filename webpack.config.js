@@ -1,8 +1,13 @@
+const webpack = require('webpack');
+
 module.exports = {
-    entry: './app/index.js',
+    entry: {
+        app: ['./app/index.js', 'webpack/hot/dev-server', 'webpack-dev-server/client?http://localhost:8080/'],
+    },
     output: {
-        path: __dirname + '/target/app/bundle',
-        filename: 'main.js'
+        path: __dirname + '/target/bundle',
+        publicPath: '/bundle/',
+        filename: 'main.js',
     },
     module: {
         loaders: [{
@@ -14,34 +19,26 @@ module.exports = {
             loader: 'vue',
         }]
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+    ],
     vue: {
         loaders: {
             js: 'babel',
             scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-        }
+        },
     },
-    // // setup for webpack-dev-server
-    // devServer: {
-    //     // root folder to serve the app
-    //     contentBase: './target/app',
-
-    //     // Enable Hot Module Replacement
-    //     hot: true,
-
-    //     // To support html5 router.
-    //     historyApiFallback: false,
-
-    //     // Suppress boring information.
-    //     noInfo: true,
-
-    //     inline: true,
-
-    //     // Limit logging
-    //     stats: {
-    //         version: false,
-    //         colors: true,
-    //         chunks: true,
-    //         children: false,
-    //     },
-    // },
+    devServer: {
+        stats: {
+            colors: true,
+        },
+        publicPath: '/bundle/',
+        contentBase: 'target/',
+        hot: true,
+        stats: {
+            version: false,
+            colors: true,
+            chunks: true,
+        },
+    },
 }

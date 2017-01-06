@@ -13,9 +13,9 @@ const debounce = require('debounce');
 gulp.task('default', ['serve']);
 
 gulp.task('serve', [], (callback) => runSequence(
-    'clean-build', ['copy-html', 'bundle-dev'],
+    'clean-build',
+    'copy-html',
     'serve:dev-server',
-    'watch-html',
     callback));
 
 gulp.task('clean-build', () => {
@@ -29,30 +29,14 @@ gulp.task('copy-html', () => {
         .pipe(size({
             title: 'static',
         }))
-        .pipe(gulp.dest('./target/app'));
-});
-
-gulp.task('bundle-dev', (callback) => {
-    // run webpack
-    webpack(webpackConfig, (err, stats) => {
-        if (err) throw new gutil.PluginError("webpack", err);
-        gutil.log("[webpack]", stats.toString({
-            version: true,
-            colors: true,
-            progress: true,
-            chunks: true,
-        }));
-        callback();
-    });
+        .pipe(gulp.dest('./target'));
 });
 
 gulp.task('serve:dev-server', () => {
     const DEV_SERVER_PORT = process.env.DEV_SERVER_PORT || 8080;
     const compiler = webpack(webpackConfig);
 
-    return new WebpackDevServer(compiler, {
-            contentBase: './target/app',
-        })
+    return new WebpackDevServer(compiler, webpackConfig.devServer)
         .listen(DEV_SERVER_PORT, 'localhost', () => {
             gutil.log('[webpack-dev-server]', `Listening at localhost:${DEV_SERVER_PORT}`);
         });
