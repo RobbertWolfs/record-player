@@ -1,54 +1,26 @@
 <template lang="pug">
     div
-        .message 
-            | {{ message }}&nbsp; 
-            span.test #100daysofcode
-        
-        .counter
-            span {{ count }}
-            button(@click.prevent="increment") click
+        h1.title {{ title }}
+
+        vinyl
 </template>
 
 <script>
+    import Vinyl from './vinyl.vue';
+
     export default {
-        data () {
+        data() {
             return {
-                message: 'Hello VueJs',
-            count: 0
+                title: '#100daysOfCode Record Player',
             }
         },
-        methods: {
-            increment () {
-            this.count ++;
-            }
-        }
+        components: { Vinyl },
     }
 
 </script>
 
-<style lang="scss">
-    .message {
-        color: hotpink;
+<style lang="scss" scoped>
+    .title {
         text-align: center;
-         .test {
-            color: blue;
-        }
-    }   
-
-    .counter {
-        margin: 10px;
-        color: teal;
-        text-align: center;
-
-        button {
-            display: block;
-            width: 100px;
-            margin: 5px auto;
-            background-color: teal;
-            border: none;
-            color: white;
-            padding: 5px;
-        }
-    }
-
+    }  
 </style>

@@ -1,3 +1,5 @@
+import './style.scss';
+
 import Vue from 'vue/dist/vue'
 import App from './components/app.vue'
 
