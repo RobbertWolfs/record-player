@@ -6,7 +6,7 @@
         .vinyl__info(v-if="artist")
             h3.info__artist {{ artist }}
             p.info__album {{ album }}
-        
+    
 </template>
 
 <script>
@@ -17,7 +17,7 @@
 
 <style lang="scss">
 
-    @import '../_colors.scss';
+    @import '../assets/scss/_colors.scss';
 
     $height: 300px;
     $width: 300px;

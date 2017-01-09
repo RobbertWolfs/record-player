@@ -1,17 +1,20 @@
 <template lang="pug">
-    div
-        h1.title {{ title }}
-
-        vinyl(v-for="vinyl in vinyls" v-bind:artist="vinyl.artist" v-bind:album="vinyl.album" v-bind:visual="vinyl.visual")
+    div.home
+        // We need the "," because otherwhise we cannot use the v-bind shorthand on component properties
+        // https://github.com/vuejs/vueify/issues/84
+        vinyl(v-for="vinyl in vinyls", :message="title", :artist="vinyl.artist", :album="vinyl.album", :visual="vinyl.visual")
 </template>
 
 <script>
-    import Vinyl from './vinyl.vue';
 
-    export default {
+    import Vue from 'vue';
+    import Vinyl from '../../components/vinyl.vue';
+
+
+    export default Vue.extend({
+        template: '<div>Welcome to the <b>home page</b>!</div>',
         data() {
             return {
-                title: '#100daysOfCode Record Player',
                 vinyls: [
                     {
                         artist: 'Daft Punk',
@@ -46,13 +49,7 @@
                 ],
             }
         },
-        components: { Vinyl },
-    }
-
+         components: { Vinyl },
+    });
+    
 </script>
-
-<style lang="scss" scoped>
-    .title {
-        text-align: center;
-    }  
-</style>

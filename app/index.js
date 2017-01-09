@@ -1,9 +1,22 @@
 import './style.scss';
 
 import Vue from 'vue/dist/vue'
-import App from './components/app.vue'
+import VueRouter from 'vue-router';
 
-new Vue({
-  el: '#app',
-  components: { App }
-})
+Vue.use(VueRouter);
+
+import routes from './modules/routes';
+
+console.log('routes', routes);
+
+// const router = new VueRouter({
+//     routes
+// });
+
+const router = new VueRouter({
+    routes,
+});
+
+const app = new Vue({
+    router,
+}).$mount('#app');

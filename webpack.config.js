@@ -25,6 +25,11 @@ module.exports = {
             loader: 'file'
         }]
     },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.common.js'
+        }
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
     ],
