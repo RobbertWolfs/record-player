@@ -2,17 +2,14 @@
     div.home
         // We need the "," because otherwhise we cannot use the v-bind shorthand on component properties
         // https://github.com/vuejs/vueify/issues/84
-        vinyl(v-for="vinyl in vinyls", :message="title", :artist="vinyl.artist", :album="vinyl.album", :visual="vinyl.visual")
+        vinyl(v-for="vinyl in vinyls", :artist="vinyl.artist", :album="vinyl.album", :visual="vinyl.visual")
 </template>
 
 <script>
 
-    import Vue from 'vue';
     import Vinyl from '../../components/vinyl.vue';
 
-
-    export default Vue.extend({
-        template: '<div>Welcome to the <b>home page</b>!</div>',
+    export default {
         data() {
             return {
                 vinyls: [
@@ -49,7 +46,7 @@
                 ],
             }
         },
-         components: { Vinyl },
-    });
+        components: { Vinyl },
+    };
     
 </script>
