@@ -50,3 +50,14 @@
     };
     
 </script>
+
+<style lang="scss">
+
+@import '../../assets/scss/_colors.scss';
+
+.home {
+    background-color: $primaryColor;
+    color: $secondaryColor;
+}
+
+</style>

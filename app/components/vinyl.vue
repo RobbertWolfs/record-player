@@ -1,5 +1,5 @@
 <template lang="pug">
-    .vinyl(v-if="visual")
+    .vinyl(v-if="visual" @click="goToRoute")
         .vinyl__visual 
             img(:src="visual")
             .record  
@@ -12,6 +12,22 @@
 <script>
     export default {
         props: ['visual', 'artist', 'album'],
+
+        computed: {
+
+            visualId() {
+                return (`${this.artist} ${this.album}`).toLowerCase().replace(/ /g, '-');
+            }
+
+        },
+
+        methods: {
+
+            goToRoute() {
+                return this.$router.push(`record/${this.visualId}`)
+            }
+            
+        }
     }
 </script>
 
