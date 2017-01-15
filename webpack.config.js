@@ -23,6 +23,9 @@ module.exports = {
         }, {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
             loader: 'file'
+        }, {
+            test: /\.json$/,
+            loader: 'json-loader'
         }]
     },
     resolve: {

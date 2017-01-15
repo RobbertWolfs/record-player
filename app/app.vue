@@ -1,36 +1,17 @@
+
 <template lang="pug">
   #record-player
     .header
       .nav
-        router-link(to="/") Home
-        router-link(to="/about") About
-    
-      router-view.view(v-transition="fade")
+        router-link(to="/") About
+        router-link(to="/records") Records
+   
+    transition(name="slide-left")
+      router-view.view
+
 </template>
 
 <style lang="scss">
-//  .slide-fade-enter-active, .slide-fade-leave-active {
-//   transition: all .5s;
-// }
-
-// .slide-fade-enter {
-//   opacity: 1;
-//   transform: translateX(50%);
-// }
-// .slide-fade-leave-active {
-//   opacity: 0;
-//   transform: translateX(-50%);
-// }
-
-
-// .fade-enter-active, .fade-leave-active {
-//   transition: opacity .5s
-// }
-// .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-//   opacity: 0
-// }
-
-
 .header {
   height: 5vh;
 

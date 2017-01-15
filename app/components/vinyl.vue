@@ -16,7 +16,7 @@
         computed: {
 
             visualId() {
-                return (`${this.artist} ${this.album}`).toLowerCase().replace(/ /g, '-');
+                return (`${this.artist}_${this.album}`).toLowerCase().replace(/ /g, '-');
             }
 
         },
@@ -24,9 +24,9 @@
         methods: {
 
             goToRoute() {
-                return this.$router.push(`record/${this.visualId}`)
+                return this.$router.push(`records/${this.visualId}`)
             }
-            
+
         }
     }
 </script>

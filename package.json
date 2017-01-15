@@ -41,6 +41,7 @@
     "gulp": "^3.9.1",
     "gulp-size": "^2.1.0",
     "gutil": "^1.6.4",
+    "json-loader": "^0.5.4",
     "node-sass": "^4.1.1",
     "pug": "^2.0.0-beta6",
     "run-sequence": "^1.2.2",
@@ -56,6 +57,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "json-query": "^2.2.0",
     "vue": "^2.1.8",
     "vue-router": "^2.1.1"
   }
