@@ -1,8 +1,7 @@
 <template lang="pug">
     div.record
-        .vinyl__visual 
+        .record__info
             img(:src="vinyl.visual")
-        .vinyl__info
             h3.info__artist {{ vinyl.artist }}
             p.info__album {{ vinyl.album }}
 </template>

@@ -1,8 +1,13 @@
 <template lang="pug">
     div.about
-        h1 Hello from the other side
+        .container
+            h1 About me 
 
-        p This is my about page. My name is Robbert
+            div
+                img(src="../../assets/images/robbert.gif" alt="Robbert Wolfs")
+
+                article
+                    | This project has come to life because of the #100DaysOfCodeChallenge by @robbert_wolfs. 
        
 </template>
 
@@ -13,6 +18,12 @@
 .about {
     background-color: $secondaryColor;
     color: $primaryColor;
+
+
+    img {
+        max-width: 400px;
+        float: left;
+    }
 }
 
 </style>
