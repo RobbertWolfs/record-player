@@ -1,5 +1,9 @@
 <template lang="pug">
     div.record
+
+        playing-record
+
+
         .record__info
             img(:src="vinyl.visual")
             h3.info__artist {{ vinyl.artist }}
@@ -10,6 +14,7 @@
 
     import jsonQuery from 'json-query';
     import records from '../../assets/records.json';
+    import PlayingRecord from '../../components/playing-record.vue'
  
     const vinyl2 = jsonQuery('records[artist=Daft Punk]', {
         data: records
@@ -27,6 +32,10 @@
                 }).value;
             }
 
+        },
+
+        components: {
+            PlayingRecord,
         }
     }
     
