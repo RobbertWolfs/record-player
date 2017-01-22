@@ -1,11 +1,6 @@
 
 <template lang="pug">
   #record-player
-    .header
-      .nav
-        router-link(to="/") About
-        router-link(to="/records") Records
-   
     transition(name="slide-left")
       router-view.view
 
@@ -31,7 +26,7 @@
 
 .view {
     display: inline-block;
-    min-height: 95vh;
+    min-height: 100vh;
     width: 100%;
 }
 </style>

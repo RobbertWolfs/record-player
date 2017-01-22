@@ -1,9 +1,6 @@
 <template lang="pug">
     div.record
 
-        playing-record
-
-
         .record__info
             img(:src="vinyl.visual")
             h3.info__artist {{ vinyl.artist }}
@@ -33,21 +30,13 @@
             }
 
         },
-
-        components: {
-            PlayingRecord,
-        }
     }
     
 </script>
 
 <style lang="scss">
 
-@import '../../assets/scss/_colors.scss';
-
-.home {
-    background-color: $primaryColor;
-    color: $secondaryColor;
-}
+    .record__info {}
 
 </style>
+

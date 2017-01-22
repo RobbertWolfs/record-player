@@ -10,8 +10,7 @@ import RecordDetail from './records/detail.vue';
 
 export default new VueRouter({
   routes: [
-    { path: '/', component: AboutView },
-    { path: '/records', component: RecordsView,
+    { path: '/', component: RecordsView,
       children: [
         { path: '', component: Records },
         { path: ':id', component: RecordDetail },
